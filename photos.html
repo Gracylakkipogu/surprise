@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photos</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body class="photos-page">
+
+    <h1>
+        🍒✨ Memories ✨🍒
+    </h1>
+
+    <div class="memory-box" onclick="openPhotos()">
+        💌
+        <p>Tap to see memories</p>
+    </div>
+
+
+    <div class="slider" id="slider">
+
+        <span onclick="prev()">❮</span>
+
+        <img id="photo" src="imagescute/angel3.jpeg">
+
+        <span onclick="next()">❯</span>
+
+    </div>
+
+
+    <script>
+
+        let photos = [
+            "imagescute/angel1.jpeg",
+            "imagescute/angel2.jpeg",
+            "imagescute/angel3.jpeg",
+            "imagescute/angel5.jpeg",
+            "imagescute/angel4.jpeg"
+        ];
+
+
+        let index = 0;
+
+
+        function openPhotos() {
+            document.getElementById("slider").style.display = "flex";
+        }
+
+
+        function next() {
+
+            index++;
+
+            if (index >= photos.length) {
+                index = 0;
+            }
+
+            document.getElementById("photo").src = photos[index];
+
+        }
+
+
+
+        function prev() {
+
+            index--;
+
+            if (index < 0) {
+                index = photos.length - 1;
+            }
+
+            document.getElementById("photo").src = photos[index];
+
+        }
+        let startX = 0;
+
+
+        let img = document.getElementById("photo");
+
+
+        img.addEventListener("touchstart", function (e) {
+
+            startX = e.touches[0].clientX;
+
+        });
+
+
+        img.addEventListener("touchend", function (e) {
+
+            let endX = e.changedTouches[0].clientX;
+
+
+            if (startX - endX > 50) {
+
+                next();
+
+            }
+
+
+            if (endX - startX > 50) {
+
+                prev();
+
+            }
+
+        });
+    </script>
+    <button class="last-btn" onclick="location.href='ending.html'">
+        Last surprise...!
+    </button>
+</body>
+
+</html>

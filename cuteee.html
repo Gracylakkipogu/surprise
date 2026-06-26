@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>its your birthday</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body class="peeche">
+    <h2> 18th Birthday</h2>
+
+    <div class="birthday-title">
+
+        <h1>
+            ✨ 19 ✨
+        </h1>
+
+        <p>
+            A new chapter begins... 🥂✨
+        </p>
+
+    </div>
+
+
+    <div class="cake-pic">
+
+        <p>
+            Make a wish and blow the candle 🕯️
+        </p>
+
+        <button class="cakes-btn" onclick="showCake()">
+            🕯️ click here to celebrate 🕯️
+        </button>
+        <div id="cakeShow">
+
+            <img class="birthday-cake-img" src="imagescute\yourcake.jpg">
+
+
+            <button class="tap-btn" onclick="openPhotos()">
+                Tap 💖
+            </button>
+
+        </div>
+
+    </div>
+    <img class="cute-girl" src="imagescute\download_transparent.gif">
+    <script>
+
+        function showCake() {
+
+            document.getElementById("cakeShow")
+                .style.display = "block";
+
+        }
+
+
+
+        function openPhotos() {
+
+            window.location.href = "photos.html";
+
+        }
+
+    </script>
+</body>
+
+</html>
